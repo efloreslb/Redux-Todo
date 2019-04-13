@@ -12,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.todo {
+  color: #fff;
+  background-color: darkgoldenrod;
+  margin: 5px;
+  padding: 10px;
+  width: 300px;
+}
