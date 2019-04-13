@@ -13,11 +13,15 @@ export default (state = initialState, action) => {
    switch (action.type) {
       case ADD_TODO:
          return {
-            todos: [...state.todos, action.payload]
+            todos: [...state.todos, action.newTodo]
          }
       case TOGGLE_TODO:
          return {
-
+            ...state,
+            todos: state.todos.map((todo, index) => 
+               action.payload === index ? { ...todo, completed: !todo.completed  } : todo
+            )
+            //todos: state.todos.map(todo => todo.id === action.payload ? {...todo, completed: !todo.completed} : todo)
          }
       default:
          return state;
