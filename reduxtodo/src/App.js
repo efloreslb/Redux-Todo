@@ -5,7 +5,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        Todos App
+        <form>
+          <input placeholder="Enter a task"></input>
+          <button></button>
+        </form>
+
+        <div className="todoList">
+
+        </div>
       </div>
     );
   }
