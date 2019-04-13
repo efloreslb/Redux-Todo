@@ -14,29 +14,33 @@ class TodoList extends Component {
 
    addTodo = e => {
       e.preventDefault();
-      this.props.addTodo(this.state)
+      if (this.state.value !== '') {
+         this.props.addTodo(this.state);
+         this.setState({value: ''})
+      } else {
+         return;
+      }
    }
 
-   newToggleTodo = (e, index) => {
-      console.log('toggled');
+   toggleTodo = (e, index) => {
       e.preventDefault();
       this.props.toggleTodo(index)
    }
 
    render() {
       return (
-         <div>
+         <div className="todoList">
             <form>
-               <label>Task: </label>
-               <input onChange={this.handleChange} placeholder="Enter a task"></input>
-               <button onClick={this.addTodo}>Add Todo</button>
+               <label>Add Task: </label>
+               <input onChange={this.handleChange} value={this.state.value} placeholder="Enter a task"></input>
+               <button onClick={this.addTodo}>Add</button>
             </form>
 
             <div className="todoList">
                {this.props.todos.map((todo, index) => (
                   <div 
                      key={index}
-                     onClick={e => this.newToggleTodo(e, index)} 
+                     onClick={e => this.toggleTodo(e, index)} 
                      className={`todo ${todo.completed === true ? 'completed' : '' }`}
                   > 
                      Todo: {todo.value}

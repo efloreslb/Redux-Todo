@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
 
 code {
@@ -13,15 +14,36 @@ code {
     monospace;
 }
 
+.App {
+  margin: 20px auto;
+  width: 400px;
+  border: 0px solid gray;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+}
+
 .todo {
   color: #fff;
-  background-color: darkgoldenrod;
-  margin: 5px;
+  background-color: rgb(32, 150, 32);
   padding: 10px;
   width: fit-content;
-  cursor: pointer
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .completed {
   text-decoration: line-through;
+  opacity: .5;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: gold;
+  border: 1px solid #000;
 }

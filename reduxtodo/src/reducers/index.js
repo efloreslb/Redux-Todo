@@ -21,7 +21,6 @@ export default (state = initialState, action) => {
             todos: state.todos.map((todo, index) => 
                action.payload === index ? { ...todo, completed: !todo.completed  } : todo
             )
-            //todos: state.todos.map(todo => todo.id === action.payload ? {...todo, completed: !todo.completed} : todo)
          }
       default:
          return state;
